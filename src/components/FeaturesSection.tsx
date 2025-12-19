@@ -5,63 +5,62 @@ export const FeaturesSection = () => {
   const features = [
     {
       icon: Globe,
-      title: "Source Tracking",
+      title: "Source tracking",
       description:
-        "Every word remembers where it came from — whether it's The Economist, a Reddit thread, or your favorite novel.",
+        "Every word remembers where it came from — articles, apps, or books.",
     },
     {
       icon: Wand2,
-      title: "Auto Translation",
+      title: "Auto translation",
       description:
-        "Instant translations with context. See not just what a word means, but how it's used.",
+        "Instant translations with context. See how words are actually used.",
     },
     {
       icon: Layers,
-      title: "Smart Categories",
+      title: "Smart categories",
       description:
-        "AI organizes your vocabulary by topic, source, and difficulty. Find related words effortlessly.",
+        "AI organizes vocabulary by topic and difficulty automatically.",
     },
     {
       icon: BookMarked,
-      title: "Context Preservation",
+      title: "Context preservation",
       description:
-        "Keep the original sentence where you found the word. Context is everything for memory.",
+        "Keep the original sentence. Context is everything for memory.",
     },
     {
       icon: Search,
-      title: "Quick Lookup",
+      title: "Quick lookup",
       description:
-        "Search across all your saved words, translations, contexts, and sources in milliseconds.",
+        "Search across words, translations, and sources instantly.",
     },
     {
       icon: Share2,
-      title: "Browser Extension",
+      title: "Browser extension",
       description:
-        "Highlight any word on any webpage. One click to save, translate, and organize.",
+        "Highlight any word on any page. One click to save and organize.",
     },
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Learn smarter, not harder
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
+            Everything you need
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Tools designed for how you actually learn — by reading, discovering,
-            and remembering in context.
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Tools designed for how you actually learn.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard
               key={feature.title}
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
-              delay={index * 100}
+              delay={index * 50}
             />
           ))}
         </div>

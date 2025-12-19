@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Crimson Pro", "Georgia", "serif"],
-        sans: ["DM Sans", "system-ui", "sans-serif"],
+        serif: ["Source Serif 4", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,13 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        honey: {
-          DEFAULT: "hsl(var(--honey))",
-          light: "hsl(var(--honey-light))",
-          dark: "hsl(var(--honey-dark))",
+        mint: {
+          DEFAULT: "hsl(var(--mint))",
+          light: "hsl(var(--mint-light))",
+          dark: "hsl(var(--mint-dark))",
         },
         cream: "hsl(var(--cream))",
-        sage: "hsl(var(--sage))",
         "context-blue": "hsl(var(--context-blue))",
         "warm-gray": "hsl(var(--warm-gray))",
         sidebar: {
