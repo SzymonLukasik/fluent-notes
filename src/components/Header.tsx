@@ -1,4 +1,4 @@
-import { BookOpen, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface HeaderProps {
@@ -8,26 +8,26 @@ interface HeaderProps {
 
 export const Header = ({ showDashboard, onToggleView }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-honey to-honey-light flex items-center justify-center shadow-soft">
-            <BookOpen className="w-5 h-5 text-primary-foreground" />
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
+            <span className="text-primary-foreground font-semibold text-sm">M</span>
           </div>
-          <span className="font-serif text-xl font-semibold text-foreground">
-            Lexica
+          <span className="font-semibold text-foreground">
+            Margin
           </span>
         </div>
 
-        <nav className="flex items-center gap-2">
+        <nav className="flex items-center gap-1">
           {showDashboard !== undefined && (
-            <Button variant="ghost" onClick={onToggleView}>
+            <Button variant="ghost" size="sm" onClick={onToggleView}>
               {showDashboard ? "Home" : "My Words"}
             </Button>
           )}
-          <Button variant="soft" size="sm" className="gap-2">
+          <Button size="sm" className="gap-1.5">
             <Plus className="w-4 h-4" />
-            <span className="hidden sm:inline">Add Word</span>
+            <span className="hidden sm:inline">Add</span>
           </Button>
         </nav>
       </div>

@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink, Clock, Tag } from "lucide-react";
+import { ExternalLink, Clock, Tag } from "lucide-react";
 
 interface VocabCardProps {
   word: string;
@@ -19,45 +19,45 @@ export const VocabCard = ({
   category,
   timestamp,
 }: VocabCardProps) => {
-  const sourceIcon = {
-    app: "📱",
-    web: "🌐",
-    book: "📖",
+  const sourceLabel = {
+    app: "App",
+    web: "Web",
+    book: "Book",
   };
 
   return (
-    <div className="group bg-card rounded-xl p-5 shadow-card card-hover border border-border/50">
-      <div className="flex items-start justify-between gap-4">
+    <div className="group bg-card rounded-lg p-4 border border-border hover:border-primary/30 transition-colors">
+      <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="font-serif text-xl font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+          <h3 className="font-medium text-foreground mb-0.5 group-hover:text-primary transition-colors">
             {word}
           </h3>
-          <p className="text-primary font-medium">{translation}</p>
+          <p className="text-sm text-primary">{translation}</p>
         </div>
-        <span className="text-2xl flex-shrink-0" title={sourceType}>
-          {sourceIcon[sourceType]}
+        <span className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
+          {sourceLabel[sourceType]}
         </span>
       </div>
 
-      <div className="mt-4 p-3 bg-secondary/50 rounded-lg border-l-2 border-primary/30">
-        <p className="text-sm text-muted-foreground italic font-serif leading-relaxed">
+      <div className="mt-3 p-3 bg-secondary/50 rounded-md border-l-2 border-primary/30">
+        <p className="text-sm text-muted-foreground italic leading-relaxed">
           "{context}"
         </p>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-        <div className="flex items-center gap-1.5">
-          <ExternalLink className="w-3.5 h-3.5" />
-          <span className="truncate max-w-[150px]">{source}</span>
+      <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+        <div className="flex items-center gap-1">
+          <ExternalLink className="w-3 h-3" />
+          <span className="truncate max-w-[120px]">{source}</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <Tag className="w-3.5 h-3.5" />
-          <span className="bg-primary/10 text-primary px-2 py-0.5 rounded-full">
+        <div className="flex items-center gap-1">
+          <Tag className="w-3 h-3" />
+          <span className="bg-mint-light text-primary px-1.5 py-0.5 rounded text-xs">
             {category}
           </span>
         </div>
-        <div className="flex items-center gap-1.5 ml-auto">
-          <Clock className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-1 ml-auto">
+          <Clock className="w-3 h-3" />
           <span>{timestamp}</span>
         </div>
       </div>

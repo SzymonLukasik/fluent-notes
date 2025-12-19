@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Filter, SlidersHorizontal } from "lucide-react";
+import { Search, SlidersHorizontal } from "lucide-react";
 import { VocabCard } from "./VocabCard";
 import { CategoryBadge } from "./CategoryBadge";
 import { Button } from "./ui/button";
@@ -90,28 +90,28 @@ export const Dashboard = () => {
   });
 
   return (
-    <section className="py-12">
+    <section className="py-8">
       <div className="container mx-auto px-4">
         {/* Search and filters */}
-        <div className="flex flex-col lg:flex-row gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search words, translations, or sources..."
+              placeholder="Search words or translations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-12 pl-12 pr-4 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+              className="w-full h-10 pl-9 pr-4 rounded-md border border-border bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
             />
           </div>
-          <Button variant="outline" className="h-12 gap-2">
+          <Button variant="outline" size="sm" className="h-10 gap-2">
             <SlidersHorizontal className="w-4 h-4" />
             Filters
           </Button>
         </div>
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-2 mb-8 pb-4 overflow-x-auto">
+        <div className="flex flex-wrap gap-2 mb-6">
           {CATEGORIES.map((cat) => (
             <CategoryBadge
               key={cat.label}
@@ -124,27 +124,23 @@ export const Dashboard = () => {
         </div>
 
         {/* Results count */}
-        <div className="mb-6">
-          <p className="text-muted-foreground">
-            Showing{" "}
-            <span className="text-foreground font-medium">
-              {filteredWords.length}
-            </span>{" "}
-            words
+        <div className="mb-4">
+          <p className="text-sm text-muted-foreground">
+            {filteredWords.length} words
           </p>
         </div>
 
         {/* Words grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredWords.map((word, index) => (
             <VocabCard key={`${word.word}-${index}`} {...word} />
           ))}
         </div>
 
         {filteredWords.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground text-lg">
-              No words found matching your search.
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">
+              No words found.
             </p>
           </div>
         )}
